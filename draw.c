@@ -1,44 +1,59 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include<stdlib.h>
+#include<time.h>
 
 
-int main(){
-	
-	//kullanici bilgilerini al
-	//sansli cekilis uygulamasý
-	//kullanici bilgilerini cek
-	
-	char isim[10],soyad[10];
-	int secim;
-	int sayi;
-	printf("isim girin=");
-	scanf("%s",&isim);
-	printf("\nsoyisim giriniz girin=");
-	scanf("%s",&soyad);
-	printf("\ndevam etmek icin secim yapiniz\n[1]sansli cekilisi dene\n[2]kullanici bilgilerini goruntule");
-	printf("\nsecim yapin:");
-	scanf("%d",&secim);
-	
-	if (secim==1){
-		printf("\nsansli cekilis uygulamasindasiniz \n1 ile 5 arasinda secim yapiniz =");
-		scanf("%d",&sayi);
-		srand(time(NULL));
-		int random=1+rand()%5;
-		
-		if(sayi==random){
-			printf("\ngirilen sayi: %d\ncekilisteki sayi: %d",sayi,random);
-			printf("\nkazandiniz");
-		}
-		else{
-			printf("\ngirilen sayi: %d\ncekilisteki sayi: %d",sayi,random);
-			printf("\nbir dahaki sefere");
-		}
-	}
-	else if(secim==2){
-		printf("\nadiniz =%s",isim);
-		printf("\nsoyadiniz =%s",soyad);
-	}
-	return 0;
+int main()
+
+{
+
+int sayi=0,tahmin=0;
+
+
+srand(time(NULL));
+
+ 
+
+sayi=rand()%100+1;
+
+ 
+
+printf("tahmin ettigim sayiyi bil bakalim?\n");
+
+scanf("%d\n", &tahmin);
+
+
+while(tahmin!=sayi)
+
+{
+
+if(tahmin<sayi)
+
+{
+printf("daha buyuk sayi tahmin etmelisinn\n");
+scanf("%d", &tahmin);
+
 }
 
+if(tahmin>sayi)
+
+{
+
+printf("daha kucuk sayi tahmin etmelisinn\n");
+
+scanf("%d", &tahmin);
+
+}
+
+if(tahmin==sayi)
+
+{
+
+printf("\ntebrikler");
+
+}
+
+}
+
+return 0;
+}
